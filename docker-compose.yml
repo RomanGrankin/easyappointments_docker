@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  db:
+     image: mysql:5.7
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: "mysqlrootpassword"
+       MYSQL_DATABASE: easyappointments
+       MYSQL_USER: easyappointments
+       MYSQL_PASSWORD: "mysqlpassword"
+     volumes:
+       - /home/docker/easyappointments/db:/var/lib/mysql
+
+  app:
+    depends_on:
+      - db
+    ports:
+      - '50000:80'
+    image: ittomorrow/easyappointments:latest
+    restart: always
+    environment:
+      BASE_URL: http://localhost:50000
+      LANGUAGE: english
+      DB_HOST: db
+      DB_NAME: easyappointments
+      DB_USERNAME: easyappointments
+      DB_PASSWORD: mysqlpassword
