@@ -2,6 +2,8 @@
 
 This repository contains the dockerized version of [Easy!Appointments](https://easyappointments.org/) - an awesome open source appointment scheduler. You can find the source code of Easy!Appointments [here](https://github.com/alextselegidis/easyappointments).
 
+All kudos go to [Alex Tselegidis](https://github.com/alextselegidis).
+
 ## About this repository
 To be able to customize Easy!Appointments via Docker environment variables, I had to make a naughty little hack, so that php takes the configuration from the environment variables. This is probably not necessary, but as I'm not a PHP guy I couldn't come up with a better solution. Feel free to send me a PR if it's possible to create a better solution for setting the class constants.
 
